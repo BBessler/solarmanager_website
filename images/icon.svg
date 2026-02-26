@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <!-- Sonnenstrahlen - kräftig -->
+  <g fill="#eab308">
+    <polygon points="256,8 228,120 284,120"/>
+    <polygon points="256,504 228,392 284,392"/>
+    <polygon points="8,256 120,228 120,284"/>
+    <polygon points="504,256 392,228 392,284"/>
+    <polygon points="78,78 128,172 172,128"/>
+    <polygon points="434,434 384,340 340,384"/>
+    <polygon points="434,78 340,128 384,172"/>
+    <polygon points="78,434 172,384 128,340"/>
+  </g>
+  <!-- Sonnenkreis -->
+  <circle cx="256" cy="256" r="148" fill="#facc15"/>
+  <!-- Bügel links -->
+  <line x1="115" y1="210" x2="160" y2="224" stroke="#1a1a2e" stroke-width="14" stroke-linecap="round"/>
+  <!-- Bügel rechts -->
+  <line x1="397" y1="210" x2="352" y2="224" stroke="#1a1a2e" stroke-width="14" stroke-linecap="round"/>
+  <!-- Brücke -->
+  <path d="M228 236 Q256 252 284 236" stroke="#1a1a2e" stroke-width="14" stroke-linecap="round" fill="none"/>
+  <!-- Linkes Glas -->
+  <ellipse cx="188" cy="240" rx="62" ry="50" fill="#1a1a2e"/>
+  <!-- Rechtes Glas -->
+  <ellipse cx="324" cy="240" rx="62" ry="50" fill="#1a1a2e"/>
+  <!-- Glanz linkes Glas -->
+  <ellipse cx="168" cy="226" rx="18" ry="22" fill="#2d2d4e" opacity="0.5" transform="rotate(-10 168 226)"/>
+  <!-- Glanz rechtes Glas -->
+  <ellipse cx="304" cy="226" rx="18" ry="22" fill="#2d2d4e" opacity="0.5" transform="rotate(-10 304 226)"/>
+  <!-- Lächeln -->
+  <path d="M192 320 Q256 368 320 320" stroke="#b45309" stroke-width="14" stroke-linecap="round" fill="none"/>
+</svg>
