@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="de" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Installation - Solarmanager</title>
+    <meta name="description" content="Installationsanleitung fuer den Solarmanager. Docker oder native Installation auf Raspberry Pi mit Schritt-fuer-Schritt-Anleitung und Screenshots.">
+    <meta name="author" content="Benjamin Bessler">
+    <link rel="canonical" href="https://solarmanager.online/installation.html">
+    <!-- Open Graph -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Installation - Solarmanager">
+    <meta property="og:description" content="Schritt-fuer-Schritt-Anleitung zur Installation des Solarmanagers mit Docker oder nativ auf dem Raspberry Pi.">
+    <meta property="og:url" content="https://solarmanager.online/installation.html">
+    <meta property="og:image" content="https://solarmanager.online/images/Dashboard.jpg">
+    <meta property="og:locale" content="de_DE">
+    <meta property="og:site_name" content="Solarmanager">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-dark-900 text-gray-200">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-dark-900/80 backdrop-blur-md z-50 border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
+            <a href="index.html" class="text-xl font-bold text-solar-400">Solarmanager</a>
+            <div class="hidden md:flex gap-8 text-sm text-gray-400">
+                <a href="#voraussetzungen" class="hover:text-solar-400 transition">Voraussetzungen</a>
+                <a href="#docker" class="hover:text-solar-400 transition">Docker</a>
+                <a href="#nativ" class="hover:text-solar-400 transition">Nativ</a>
+                <a href="#zugriff" class="hover:text-solar-400 transition">Zugriff</a>
+            </div>
+            <a href="index.html" class="text-sm text-gray-400 hover:text-solar-400 transition">← Startseite</a>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <section class="pt-28 pb-16 bg-dark-900">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl sm:text-5xl font-extrabold text-white mb-4">Installation</h1>
+            <p class="text-lg text-gray-400 max-w-2xl mx-auto">
+                Schritt-für-Schritt-Anleitung zur Einrichtung des Solarmanagers auf deinem Raspberry Pi oder Server.
+            </p>
+        </div>
+    </section>
+
+    <!-- Voraussetzungen -->
+    <section id="voraussetzungen" class="py-16 bg-dark-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-2xl font-bold text-white mb-8">Voraussetzungen</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-dark-700 rounded-xl p-6 border border-gray-700/50">
+                    <div class="w-10 h-10 bg-solar-500/10 rounded-lg flex items-center justify-center mb-3">
+                        <svg class="w-5 h-5 text-solar-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 3v1.5M4.5 8.25H3m18 0h-1.5M4.5 12H3m18 0h-1.5m-15 3.75H3m18 0h-1.5M8.25 19.5V21M12 3v1.5m0 15V21m3.75-18v1.5m0 15V21m-9-1.5h10.5a2.25 2.25 0 002.25-2.25V6.75a2.25 2.25 0 00-2.25-2.25H6.75A2.25 2.25 0 004.5 6.75v10.5a2.25 2.25 0 002.25 2.25z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-white font-semibold mb-2">Raspberry Pi</h3>
+                    <p class="text-gray-400 text-sm">Raspberry Pi 4 oder neuer mit Raspberry Pi OS (Debian-basiert). Alternativ jeder Linux-Server.</p>
+                </div>
+                <div class="bg-dark-700 rounded-xl p-6 border border-gray-700/50">
+                    <div class="w-10 h-10 bg-green-500/10 rounded-lg flex items-center justify-center mb-3">
+                        <svg class="w-5 h-5 text-green-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-white font-semibold mb-2">Internetverbindung</h3>
+                    <p class="text-gray-400 text-sm">Für die Installation und für Wetterdaten/Prognosen. Der Betrieb läuft lokal.</p>
+                </div>
+                <div class="bg-dark-700 rounded-xl p-6 border border-gray-700/50">
+                    <div class="w-10 h-10 bg-blue-500/10 rounded-lg flex items-center justify-center mb-3">
+                        <svg class="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 7.5l3 2.25-3 2.25m4.5 0h3m-9 8.25h13.5A2.25 2.25 0 0021 18V6a2.25 2.25 0 00-2.25-2.25H5.25A2.25 2.25 0 003 6v12a2.25 2.25 0 002.25 2.25z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-white font-semibold mb-2">SSH-Zugang</h3>
+                    <p class="text-gray-400 text-sm">SSH-Zugang zum Pi bzw. Server für die Einrichtung und Verwaltung.</p>
+                </div>
+            </div>
+
+            <!-- Methoden-Vergleich -->
+            <div class="mt-12 bg-dark-700 rounded-xl border border-gray-700/50 overflow-hidden">
+                <div class="p-6 border-b border-gray-700/50">
+                    <h3 class="text-lg font-semibold text-white">Welche Methode passt zu dir?</h3>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-sm">
+                        <thead>
+                            <tr class="border-b border-gray-700/50">
+                                <th class="text-left p-4 text-gray-400 font-medium"></th>
+                                <th class="text-left p-4 text-solar-400 font-semibold">Docker (empfohlen)</th>
+                                <th class="text-left p-4 text-gray-300 font-semibold">Nativ</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-gray-400">
+                            <tr class="border-b border-gray-700/30">
+                                <td class="p-4 font-medium text-gray-300">Aufwand</td>
+                                <td class="p-4">Ein Befehl</td>
+                                <td class="p-4">Ein Befehl</td>
+                            </tr>
+                            <tr class="border-b border-gray-700/30">
+                                <td class="p-4 font-medium text-gray-300">Updates</td>
+                                <td class="p-4">Einfach per Script</td>
+                                <td class="p-4">Per Script</td>
+                            </tr>
+                            <tr class="border-b border-gray-700/30">
+                                <td class="p-4 font-medium text-gray-300">Isolation</td>
+                                <td class="p-4">Container-basiert</td>
+                                <td class="p-4">Direkt auf dem System</td>
+                            </tr>
+                            <tr class="border-b border-gray-700/30">
+                                <td class="p-4 font-medium text-gray-300">Verwaltung</td>
+                                <td class="p-4">Portainer (Web-UI)</td>
+                                <td class="p-4">systemd / SSH</td>
+                            </tr>
+                            <tr>
+                                <td class="p-4 font-medium text-gray-300">Betriebssysteme</td>
+                                <td class="p-4">Debian, Ubuntu, RHEL, Fedora, Arch, openSUSE</td>
+                                <td class="p-4">Debian / Raspberry Pi OS</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Docker Installation -->
+    <section id="docker" class="py-16 bg-dark-900">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center gap-3 mb-2">
+                <span class="px-3 py-1 bg-solar-500/10 text-solar-400 text-xs font-semibold rounded-full">Empfohlen</span>
+            </div>
+            <h2 class="text-2xl font-bold text-white mb-4">Installation mit Docker</h2>
+            <p class="text-gray-400 mb-10">Docker vereinfacht die Installation und Updates auf einen einzigen Befehl. Alle Abhängigkeiten werden automatisch eingerichtet.</p>
+
+            <!-- Schritt 1 -->
+            <div class="mb-12">
+                <div class="flex items-start gap-4 mb-4">
+                    <span class="flex-shrink-0 w-8 h-8 bg-solar-500 text-dark-900 rounded-full flex items-center justify-center font-bold text-sm">1</span>
+                    <div>
+                        <h3 class="text-lg font-semibold text-white">Setup-Script herunterladen und starten</h3>
+                        <p class="text-gray-400 text-sm mt-1">Per SSH auf dem Pi einloggen und folgenden Befehl ausführen:</p>
+                    </div>
+                </div>
+                <div class="ml-12 bg-dark-700 rounded-xl border border-gray-700/50 p-5">
+                    <pre class="text-sm text-gray-300 overflow-x-auto"><code>wget https://raw.githubusercontent.com/BBessler/Solarmanager/main/install/setup_docker.sh
+chmod +x setup_docker.sh
+./setup_docker.sh</code></pre>
+                </div>
+                <div class="ml-12 mt-4">
+                    <img src="images/install/docker/1.jpg" alt="SSH Terminal" class="rounded-xl border border-gray-700/50 w-full">
+                    <p class="text-gray-500 text-xs mt-2">SSH-Verbindung zum Raspberry Pi</p>
+                </div>
+                <div class="ml-12 mt-4">
+                    <img src="images/install/docker/2.jpg" alt="Script Download" class="rounded-xl border border-gray-700/50 w-full">
+                    <p class="text-gray-500 text-xs mt-2">Script herunterladen und ausführen</p>
+                </div>
+            </div>
+
+            <!-- Schritt 2 -->
+            <div class="mb-12">
+                <div class="flex items-start gap-4 mb-4">
+                    <span class="flex-shrink-0 w-8 h-8 bg-solar-500 text-dark-900 rounded-full flex items-center justify-center font-bold text-sm">2</span>
+                    <div>
+                        <h3 class="text-lg font-semibold text-white">Hostname und Datenbank konfigurieren</h3>
+                        <p class="text-gray-400 text-sm mt-1">Das Script fragt interaktiv nach dem gewünschten Hostnamen und Datenbankpasswort. Der Hostname wird für den Zugriff im lokalen Netzwerk verwendet (z.B. <code class="text-solar-400">solarmanager.local</code>).</p>
+                    </div>
+                </div>
+                <div class="ml-12 grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <img src="images/install/docker/3.jpg" alt="Hostname Konfiguration" class="rounded-xl border border-gray-700/50 w-full">
+                        <p class="text-gray-500 text-xs mt-2">Hostname festlegen</p>
+                    </div>
+                    <div>
+                        <img src="images/install/docker/4.jpg" alt="Datenbank Passwort" class="rounded-xl border border-gray-700/50 w-full">
+                        <p class="text-gray-500 text-xs mt-2">Datenbankpasswort setzen</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Schritt 3 -->
+            <div class="mb-12">
+                <div class="flex items-start gap-4 mb-4">
+                    <span class="flex-shrink-0 w-8 h-8 bg-solar-500 text-dark-900 rounded-full flex items-center justify-center font-bold text-sm">3</span>
+                    <div>
+                        <h3 class="text-lg font-semibold text-white">Neu einloggen (falls Docker installiert wurde)</h3>
+                        <p class="text-gray-400 text-sm mt-1">Falls Docker noch nicht installiert war, wird es automatisch eingerichtet. Danach muss man sich <strong class="text-white">einmal neu einloggen</strong> (SSH-Session schließen und öffnen) und das Script erneut ausführen.</p>
+                    </div>
+                </div>
+                <div class="ml-12 grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <img src="images/install/docker/5_VorNeustart.jpg" alt="Vor Neustart" class="rounded-xl border border-gray-700/50 w-full">
+                        <p class="text-gray-500 text-xs mt-2">Status vor dem Neu-Einloggen</p>
+                    </div>
+                    <div>
+                        <img src="images/install/docker/6_nachNeustart.jpg" alt="Nach Neustart" class="rounded-xl border border-gray-700/50 w-full">
+                        <p class="text-gray-500 text-xs mt-2">Nach dem Neu-Einloggen</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Schritt 4 -->
+            <div class="mb-12">
+                <div class="flex items-start gap-4 mb-4">
+                    <span class="flex-shrink-0 w-8 h-8 bg-solar-500 text-dark-900 rounded-full flex items-center justify-center font-bold text-sm">4</span>
+                    <div>
+                        <h3 class="text-lg font-semibold text-white">Script erneut ausführen</h3>
+                        <p class="text-gray-400 text-sm mt-1">Nach dem Neu-Einloggen das Script erneut starten. Es erkennt automatisch, dass Docker bereits installiert ist und richtet den Solarmanager ein.</p>
+                    </div>
+                </div>
+                <div class="ml-12 bg-dark-700 rounded-xl border border-gray-700/50 p-5 mb-4">
+                    <pre class="text-sm text-gray-300 overflow-x-auto"><code>./setup_docker.sh</code></pre>
+                </div>
+                <div class="ml-12 grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <img src="images/install/docker/7.jpg" alt="Zweite Ausfuehrung" class="rounded-xl border border-gray-700/50 w-full">
+                        <p class="text-gray-500 text-xs mt-2">Zweite Ausführung des Scripts</p>
+                    </div>
+                    <div>
+                        <img src="images/install/docker/8.jpg" alt="Konfiguration" class="rounded-xl border border-gray-700/50 w-full">
+                        <p class="text-gray-500 text-xs mt-2">Hostname und Passwort bestätigen</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Schritt 5 -->
+            <div class="mb-12">
+                <div class="flex items-start gap-4 mb-4">
+                    <span class="flex-shrink-0 w-8 h-8 bg-solar-500 text-dark-900 rounded-full flex items-center justify-center font-bold text-sm">5</span>
+                    <div>
+                        <h3 class="text-lg font-semibold text-white">Installation abgeschlossen</h3>
+                        <p class="text-gray-400 text-sm mt-1">Das Script lädt die neuesten Releases herunter, startet die Container und zeigt am Ende die Zugriffs-URLs an. Nach <strong class="text-white">2–5 Minuten</strong> ist der Solarmanager im Browser erreichbar.</p>
+                    </div>
+                </div>
+                <div class="ml-12 grid grid-cols-1 gap-4">
+                    <div>
+                        <img src="images/install/docker/9.jpg" alt="Backend Start" class="rounded-xl border border-gray-700/50 w-full">
+                        <p class="text-gray-500 text-xs mt-2">Backend wird gestartet</p>
+                    </div>
+                    <div>
+                        <img src="images/install/docker/10.jpg" alt="Installation fertig" class="rounded-xl border border-gray-700/50 w-full">
+                        <p class="text-gray-500 text-xs mt-2">Zusammenfassung mit Zugriffs-URLs</p>
+                    </div>
+                    <div>
+                        <img src="images/install/docker/11_StartSolarmanager.jpg" alt="Setup Wizard" class="rounded-xl border border-gray-700/50 w-full">
+                        <p class="text-gray-500 text-xs mt-2">Setup-Wizard im Browser — Solarmanager ist bereit!</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Was wird installiert -->
+            <div class="bg-dark-700 rounded-xl border border-gray-700/50 p-6 mb-12">
+                <h3 class="text-lg font-semibold text-white mb-4">Das Script installiert automatisch:</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm text-gray-400">
+                    <div class="flex items-center gap-2">
+                        <svg class="w-4 h-4 text-green-400 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+                        Docker (falls nicht vorhanden)
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <svg class="w-4 h-4 text-green-400 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+                        Solarmanager Backend + Frontend
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <svg class="w-4 h-4 text-green-400 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+                        MariaDB Datenbank
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <svg class="w-4 h-4 text-green-400 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+                        phpMyAdmin (DB-Verwaltung)
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <svg class="w-4 h-4 text-green-400 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+                        Caddy Reverse-Proxy mit HTTPS
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <svg class="w-4 h-4 text-green-400 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+                        Portainer (Docker-Verwaltung)
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <svg class="w-4 h-4 text-green-400 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+                        mDNS/Avahi (.local-Hostname)
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <svg class="w-4 h-4 text-green-400 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+                        Frontend-Konfiguration (API-URL)
+                    </div>
+                </div>
+            </div>
+
+            <!-- Update -->
+            <div class="mb-12">
+                <h3 class="text-xl font-bold text-white mb-4">Updates</h3>
+                <p class="text-gray-400 text-sm mb-4">Um den Solarmanager auf die neueste Version zu aktualisieren:</p>
+                <div class="bg-dark-700 rounded-xl border border-gray-700/50 p-5 mb-4">
+                    <pre class="text-sm text-gray-300 overflow-x-auto"><code>wget -O update_docker.sh https://raw.githubusercontent.com/BBessler/Solarmanager/main/install/update_docker.sh
+chmod +x update_docker.sh
+./update_docker.sh</code></pre>
+                </div>
+                <p class="text-gray-400 text-sm mb-4">Für die <strong class="text-white">Beta-Version</strong> (Pre-Release) den <code class="text-solar-400">--beta</code>-Parameter anhängen:</p>
+                <div class="bg-dark-700 rounded-xl border border-gray-700/50 p-5">
+                    <pre class="text-sm text-gray-300 overflow-x-auto"><code>./update_docker.sh --beta</code></pre>
+                </div>
+                <p class="text-gray-500 text-xs mt-3">Das Standard-Update installiert nur stabile Releases — ein Produktivsystem bekommt nie versehentlich eine Beta-Version.</p>
+            </div>
+
+            <!-- Nuetzliche Befehle -->
+            <div>
+                <h3 class="text-xl font-bold text-white mb-4">Nützliche Befehle</h3>
+                <div class="bg-dark-700 rounded-xl border border-gray-700/50 p-5">
+                    <pre class="text-sm text-gray-300 overflow-x-auto"><code><span class="text-gray-500"># Container-Status pruefen</span>
+cd ~/solarmanager && docker compose ps
+
+<span class="text-gray-500"># Solarmanager-Logs anzeigen</span>
+docker compose logs -f solarmanager
+
+<span class="text-gray-500"># Alle Logs anzeigen</span>
+docker compose logs -f
+
+<span class="text-gray-500"># Neu starten</span>
+docker compose restart
+
+<span class="text-gray-500"># Stoppen / Starten</span>
+docker compose down
+docker compose up -d</code></pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Native Installation -->
+    <section id="nativ" class="py-16 bg-dark-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-2xl font-bold text-white mb-4">Native Installation (ohne Docker)</h2>
+            <p class="text-gray-400 mb-10">Alternative zur Docker-Installation. Installiert alle Komponenten direkt auf dem System. Geeignet für Raspberry Pi OS / Debian.</p>
+
+            <!-- Schritt 1 -->
+            <div class="mb-12">
+                <div class="flex items-start gap-4 mb-4">
+                    <span class="flex-shrink-0 w-8 h-8 bg-gray-600 text-white rounded-full flex items-center justify-center font-bold text-sm">1</span>
+                    <div>
+                        <h3 class="text-lg font-semibold text-white">Setup-Script ausführen</h3>
+                        <p class="text-gray-400 text-sm mt-1">Per SSH auf dem Raspberry Pi einloggen und folgenden Befehl ausführen:</p>
+                    </div>
+                </div>
+                <div class="ml-12 bg-dark-700 rounded-xl border border-gray-700/50 p-5">
+                    <pre class="text-sm text-gray-300 overflow-x-auto"><code>wget https://raw.githubusercontent.com/BBessler/Solarmanager/main/install/setup_solarmanager.sh
+chmod +x setup_solarmanager.sh
+sudo ./setup_solarmanager.sh</code></pre>
+                </div>
+            </div>
+
+            <!-- Was wird installiert -->
+            <div class="bg-dark-700 rounded-xl border border-gray-700/50 p-6 mb-12">
+                <h3 class="text-lg font-semibold text-white mb-4">Das Script installiert automatisch:</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm text-gray-400">
+                    <div class="flex items-center gap-2">
+                        <svg class="w-4 h-4 text-green-400 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+                        Apache Webserver mit PHP und SSL
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <svg class="w-4 h-4 text-green-400 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+                        MariaDB Datenbank
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <svg class="w-4 h-4 text-green-400 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+                        phpMyAdmin
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <svg class="w-4 h-4 text-green-400 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+                        .NET Runtime
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <svg class="w-4 h-4 text-green-400 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+                        Python-Abhängigkeiten (BMW/Hyundai API)
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <svg class="w-4 h-4 text-green-400 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+                        Firewall (UFW)
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <svg class="w-4 h-4 text-green-400 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+                        Solarmanager Backend + Frontend
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <svg class="w-4 h-4 text-green-400 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+                        Systemd-Service (Autostart)
+                    </div>
+                </div>
+            </div>
+
+            <!-- Datenbank optional -->
+            <div class="mb-12">
+                <div class="flex items-start gap-4 mb-4">
+                    <span class="flex-shrink-0 w-8 h-8 bg-gray-600 text-white rounded-full flex items-center justify-center font-bold text-sm">2</span>
+                    <div>
+                        <h3 class="text-lg font-semibold text-white">Datenbank importieren (optional)</h3>
+                        <p class="text-gray-400 text-sm mt-1">Falls eine bestehende Datenbank-Sicherung (<code class="text-solar-400">solardb.sql</code>) importiert werden soll:</p>
+                    </div>
+                </div>
+                <div class="ml-12 bg-dark-700 rounded-xl border border-gray-700/50 p-5">
+                    <pre class="text-sm text-gray-300 overflow-x-auto"><code>wget https://raw.githubusercontent.com/BBessler/Solarmanager/main/install/setup_DB.sh
+chmod +x setup_DB.sh
+sudo ./setup_DB.sh</code></pre>
+                </div>
+            </div>
+
+            <!-- Update -->
+            <div class="mb-12">
+                <h3 class="text-xl font-bold text-white mb-4">Updates</h3>
+                <div class="bg-dark-700 rounded-xl border border-gray-700/50 p-5 mb-4">
+                    <pre class="text-sm text-gray-300 overflow-x-auto"><code>wget -O update_solarmanager.sh https://raw.githubusercontent.com/BBessler/Solarmanager/main/install/update_solarmanager.sh
+chmod +x update_solarmanager.sh
+sudo ./update_solarmanager.sh</code></pre>
+                </div>
+                <p class="text-gray-400 text-sm">Das Update-Script lädt die neuesten Releases, sichert die Frontend-Konfiguration und startet das Backend neu. Für Beta-Versionen: <code class="text-solar-400">sudo ./update_solarmanager.sh --beta</code></p>
+            </div>
+
+            <!-- Nuetzliche Befehle -->
+            <div>
+                <h3 class="text-xl font-bold text-white mb-4">Nützliche Befehle</h3>
+                <div class="bg-dark-700 rounded-xl border border-gray-700/50 p-5">
+                    <pre class="text-sm text-gray-300 overflow-x-auto"><code><span class="text-gray-500"># Backend neu starten</span>
+sudo systemctl restart solarmanager.service
+
+<span class="text-gray-500"># Backend-Status pruefen</span>
+sudo systemctl status solarmanager.service
+
+<span class="text-gray-500"># Backend-Logs anzeigen</span>
+sudo journalctl -u solarmanager.service -f</code></pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Zugriff -->
+    <section id="zugriff" class="py-16 bg-dark-900">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-2xl font-bold text-white mb-8">Zugriff nach der Installation</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+                <!-- Docker URLs -->
+                <div class="bg-dark-700 rounded-xl border border-gray-700/50 p-6">
+                    <h3 class="text-white font-semibold mb-4 flex items-center gap-2">
+                        <span class="px-2 py-0.5 bg-solar-500/10 text-solar-400 text-xs font-semibold rounded">Docker</span>
+                        Zugriffs-URLs
+                    </h3>
+                    <div class="space-y-3 text-sm">
+                        <div class="flex justify-between">
+                            <span class="text-gray-400">Frontend</span>
+                            <code class="text-solar-400">https://solarmanager.local</code>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-400">API / Swagger</span>
+                            <code class="text-solar-400">https://solarmanager.local/swagger</code>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-400">phpMyAdmin</span>
+                            <code class="text-solar-400">https://solarmanager.local/phpmyadmin</code>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-400">Portainer</span>
+                            <code class="text-solar-400">https://solarmanager.local:9443</code>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Native URLs -->
+                <div class="bg-dark-700 rounded-xl border border-gray-700/50 p-6">
+                    <h3 class="text-white font-semibold mb-4 flex items-center gap-2">
+                        <span class="px-2 py-0.5 bg-gray-600/50 text-gray-300 text-xs font-semibold rounded">Nativ</span>
+                        Zugriffs-URLs
+                    </h3>
+                    <div class="space-y-3 text-sm">
+                        <div class="flex justify-between">
+                            <span class="text-gray-400">Frontend</span>
+                            <code class="text-gray-300">https://solarmanager.local</code>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-400">Backend-API</span>
+                            <code class="text-gray-300">https://solarmanager.local:453</code>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-400">phpMyAdmin</span>
+                            <code class="text-gray-300">https://solarmanager.local/phpmyadmin</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SSL Hinweis -->
+            <div class="bg-dark-700 rounded-xl border border-solar-500/30 p-6">
+                <h3 class="text-white font-semibold mb-3 flex items-center gap-2">
+                    <svg class="w-5 h-5 text-solar-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z"/>
+                    </svg>
+                    Hinweis zum SSL-Zertifikat
+                </h3>
+                <p class="text-gray-400 text-sm mb-3">Da ein Self-Signed-Zertifikat verwendet wird, zeigt der Browser beim ersten Zugriff eine Sicherheitswarnung an. Diese muss einmalig bestätigt werden:</p>
+                <div class="space-y-1 text-sm text-gray-400">
+                    <p><strong class="text-gray-300">Chrome/Edge:</strong> „Erweitert" → „Weiter zu … (unsicher)"</p>
+                    <p><strong class="text-gray-300">Firefox:</strong> „Erweitert…" → „Risiko akzeptieren und fortfahren"</p>
+                    <p><strong class="text-gray-300">Safari:</strong> „Details einblenden" → „Diese Website besuchen"</p>
+                </div>
+            </div>
+
+            <p class="text-gray-500 text-sm mt-6 text-center">Nach dem Start kann es <strong class="text-gray-300">2–5 Minuten</strong> dauern, bis alle Dienste erreichbar sind, da die Datenbank beim ersten Start eingerichtet wird.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 bg-dark-800 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="flex justify-center gap-6">
+                <a href="https://github.com/BBessler/Solarmanager" target="_blank" class="text-gray-400 hover:text-solar-400 transition inline-flex items-center gap-2 text-sm">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                    GitHub
+                </a>
+            </div>
+            <div class="flex justify-center gap-4 mt-4 text-xs text-gray-500">
+                <a href="impressum.html" class="hover:text-gray-300 transition">Impressum</a>
+            </div>
+            <p class="text-gray-600 text-xs mt-4">&copy; 2026 Solarmanager</p>
+        </div>
+    </footer>
+
+</body>
+</html>

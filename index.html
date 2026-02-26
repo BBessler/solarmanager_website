@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="de" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solarmanager - Intelligentes Energiemanagement</title>
+    <meta name="description" content="Intelligentes Energiemanagement fuer dein Zuhause. PV-Steuerung mit ML-Prognosen, Wallbox-Steuerung (OCPP), Batteriespeicher und Fahrzeugladung.">
+    <meta name="keywords" content="Solarmanager, PV, Photovoltaik, Energiemanagement, Wallbox, OCPP, Batteriespeicher, Marstek, Raspberry Pi">
+    <meta name="author" content="Benjamin Bessler">
+    <link rel="canonical" href="https://solarmanager.online/">
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Solarmanager - Intelligentes Energiemanagement">
+    <meta property="og:description" content="Intelligentes Energiemanagement fuer dein Zuhause. PV-Steuerung, Wallbox, Batteriespeicher und Fahrzeugladung.">
+    <meta property="og:url" content="https://solarmanager.online/">
+    <meta property="og:image" content="https://solarmanager.online/images/Dashboard.jpg">
+    <meta property="og:locale" content="de_DE">
+    <meta property="og:site_name" content="Solarmanager">
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Solarmanager - Intelligentes Energiemanagement">
+    <meta name="twitter:description" content="Intelligentes Energiemanagement fuer dein Zuhause. PV-Steuerung, Wallbox, Batteriespeicher und Fahrzeugladung.">
+    <meta name="twitter:image" content="https://solarmanager.online/images/Dashboard.jpg">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-dark-900 text-gray-200">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-dark-900/80 backdrop-blur-md z-50 border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
+            <a href="#" class="text-xl font-bold text-solar-400">Solarmanager</a>
+            <div class="hidden md:flex gap-8 text-sm text-gray-400">
+                <a href="#features" class="hover:text-solar-400 transition">Features</a>
+                <a href="#vorteile" class="hover:text-solar-400 transition">Vorteile</a>
+                <a href="#screenshots" class="hover:text-solar-400 transition">Screenshots</a>
+                <a href="#highlights" class="hover:text-solar-400 transition">Highlights</a>
+                <a href="#installation" class="hover:text-solar-400 transition">Installation</a>
+                <a href="kontakt.html" class="hover:text-solar-400 transition">Kontakt</a>
+            </div>
+            <a href="https://github.com/BBessler/Solarmanager" target="_blank" class="text-gray-400 hover:text-white transition">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
+        <div class="absolute inset-0 bg-gradient-to-b from-dark-900 via-dark-800 to-dark-900"></div>
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-solar-400 rounded-full blur-[128px]"></div>
+            <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-green-500 rounded-full blur-[128px]"></div>
+        </div>
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight mb-6">
+                <span class="text-white">Solar</span><span class="text-solar-400">manager</span>
+            </h1>
+            <p class="text-xl sm:text-2xl text-gray-400 max-w-3xl mx-auto mb-10">
+                Intelligentes Energiemanagement fuer dein Zuhause
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center mb-16">
+                <a href="https://github.com/BBessler/Solarmanager" target="_blank"
+                   class="inline-flex items-center justify-center px-8 py-3 bg-solar-500 hover:bg-solar-400 text-dark-900 font-semibold rounded-lg transition transform hover:scale-105">
+                    Jetzt installieren
+                </a>
+                <a href="#features"
+                   class="inline-flex items-center justify-center px-8 py-3 border border-gray-600 hover:border-solar-400 text-gray-300 hover:text-solar-400 rounded-lg transition">
+                    Mehr erfahren
+                </a>
+            </div>
+            <div class="relative max-w-5xl mx-auto">
+                <div class="absolute -inset-4 bg-gradient-to-r from-solar-500/20 via-green-500/20 to-solar-500/20 rounded-2xl blur-xl"></div>
+                <img src="images/Dashboard.jpg" alt="Solarmanager Dashboard"
+                     class="relative rounded-xl shadow-2xl border border-gray-700/50 w-full">
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-24 bg-dark-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">Alles unter Kontrolle</h2>
+                <p class="text-gray-400 max-w-2xl mx-auto">Vier Saeulen fuer dein intelligentes Energiemanagement</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- PV-Steuerung -->
+                <div class="bg-dark-700 rounded-xl p-6 border border-gray-700/50 hover:border-solar-500/50 transition group">
+                    <div class="w-12 h-12 bg-solar-500/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-solar-500/20 transition">
+                        <svg class="w-6 h-6 text-solar-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold text-white mb-2">PV-Steuerung</h3>
+                    <p class="text-gray-400 text-sm">ML-basierte Erzeugungsprognosen und intelligente Lade-Algorithmen fuer maximalen Eigenverbrauch.</p>
+                </div>
+                <!-- Wallbox -->
+                <div class="bg-dark-700 rounded-xl p-6 border border-gray-700/50 hover:border-green-500/50 transition group">
+                    <div class="w-12 h-12 bg-green-500/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-green-500/20 transition">
+                        <svg class="w-6 h-6 text-green-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold text-white mb-2">Wallbox-Steuerung</h3>
+                    <p class="text-gray-400 text-sm">OCPP 1.6 & 2.0 kompatibel. Sonne- und Prognose-Lademodi fuer optimales Laden.</p>
+                </div>
+                <!-- Batteriespeicher -->
+                <div class="bg-dark-700 rounded-xl p-6 border border-gray-700/50 hover:border-blue-500/50 transition group">
+                    <div class="w-12 h-12 bg-blue-500/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-blue-500/20 transition">
+                        <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M21 10.5h.375c.621 0 1.125.504 1.125 1.125v2.25c0 .621-.504 1.125-1.125 1.125H21M4.5 10.5H18V15H4.5v-4.5zM3.75 18h15A2.25 2.25 0 0021 15.75v-6a2.25 2.25 0 00-2.25-2.25h-15A2.25 2.25 0 001.5 9.75v6A2.25 2.25 0 003.75 18z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold text-white mb-2">Batteriespeicher</h3>
+                    <p class="text-gray-400 text-sm">Automatische Lade- und Entladesteuerung mit intelligenten Regeln fuer Marstek und weitere Speichersysteme.</p>
+                </div>
+                <!-- Fahrzeugladung -->
+                <div class="bg-dark-700 rounded-xl p-6 border border-gray-700/50 hover:border-purple-500/50 transition group">
+                    <div class="w-12 h-12 bg-purple-500/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-purple-500/20 transition">
+                        <svg class="w-6 h-6 text-purple-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h1.125c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H18.75m-7.5-3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold text-white mb-2">Fahrzeugladung</h3>
+                    <p class="text-gray-400 text-sm">BMW, Hyundai & Tesla Integration mit Kalenderplanung fuer optimale Ladezeiten.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vorteile Section -->
+    <section id="vorteile" class="py-24 bg-dark-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">Warum Solarmanager?</h2>
+                <p class="text-gray-400 max-w-2xl mx-auto">Maximaler Eigenverbrauch, minimaler Netzbezug — vollautomatisch</p>
+            </div>
+
+            <!-- Vorteil 1: Intelligente Lademodi -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-20">
+                <div>
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 bg-solar-500/10 rounded-lg flex items-center justify-center">
+                            <svg class="w-5 h-5 text-solar-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">Intelligente Lademodi</h3>
+                    </div>
+                    <p class="text-gray-400 leading-relaxed mb-4">
+                        Fünf verschiedene Lademodi passen sich an jede Situation an. Im <strong class="text-gray-300">Sonne-Modus</strong> wird die Ladeleistung in Echtzeit an die PV-Produktion angepasst — mit Reserve für den Hausverbrauch.
+                    </p>
+                    <p class="text-gray-400 leading-relaxed mb-4">
+                        Der <strong class="text-gray-300">Prognose-Modus</strong> berechnet anhand von Wettervorhersagen und dem aktuellen Ladestand, wie schnell geladen werden muss, damit das Auto pünktlich zur Abfahrt voll ist — ohne unnötigen Netzbezug.
+                    </p>
+                    <div class="space-y-2 text-sm">
+                        <div class="flex items-start gap-2 text-gray-400">
+                            <svg class="w-4 h-4 text-solar-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+                            <span><strong class="text-gray-300">Sonne:</strong> PV-optimiertes Laden mit Hausverbrauch-Reserve</span>
+                        </div>
+                        <div class="flex items-start gap-2 text-gray-400">
+                            <svg class="w-4 h-4 text-solar-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+                            <span><strong class="text-gray-300">Sonne (max):</strong> Maximale PV-Leistung ins Auto</span>
+                        </div>
+                        <div class="flex items-start gap-2 text-gray-400">
+                            <svg class="w-4 h-4 text-solar-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+                            <span><strong class="text-gray-300">Prognose:</strong> Wetterbasiert laden mit optimaler Haus-Reserve</span>
+                        </div>
+                        <div class="flex items-start gap-2 text-gray-400">
+                            <svg class="w-4 h-4 text-solar-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+                            <span><strong class="text-gray-300">Verbrauch:</strong> Maximaler Strom ins Auto, Stopp bei fehlendem PV</span>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 bg-green-500/10 rounded-lg flex items-center justify-center">
+                            <svg class="w-5 h-5 text-green-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">Kalenderbasierte Planung</h3>
+                    </div>
+                    <p class="text-gray-400 leading-relaxed mb-4">
+                        Im <strong class="text-gray-300">Autokalender</strong> hinterlegst du, wann das Auto gebraucht wird. Der Solarmanager berechnet automatisch, wann und wie schnell geladen werden muss — bei einem variablen Stromtarif wird versucht, zur günstigsten Uhrzeit zu laden.
+                    </p>
+                    <p class="text-gray-400 leading-relaxed mb-4">
+                        Optional kann ein <strong class="text-gray-300">Ladelimit</strong> pro Termin gesetzt werden: Das Auto muss z.B. nur auf 80% geladen sein, nicht auf 100%.
+                    </p>
+
+                    <div class="flex items-center gap-3 mb-4 mt-8">
+                        <div class="w-10 h-10 bg-blue-500/10 rounded-lg flex items-center justify-center">
+                            <svg class="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M21 10.5h.375c.621 0 1.125.504 1.125 1.125v2.25c0 .621-.504 1.125-1.125 1.125H21M4.5 10.5H18V15H4.5v-4.5zM3.75 18h15A2.25 2.25 0 0021 15.75v-6a2.25 2.25 0 00-2.25-2.25h-15A2.25 2.25 0 001.5 9.75v6A2.25 2.25 0 003.75 18z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">Intelligentes Akku-Management</h3>
+                    </div>
+                    <p class="text-gray-400 leading-relaxed mb-4">
+                        Der Hausakku wird automatisch gesteuert: Reicht die PV-Prognose für den restlichen Tag, wird der Akku erst später geladen — damit morgens mehr Strom fürs Auto oder den Haushalt verfügbar ist.
+                    </p>
+                    <p class="text-gray-400 leading-relaxed">
+                        Abends berechnet der Solarmanager, ob der Akku bis zum nächsten Morgen reicht und passt die Entladeleistung entsprechend an — für möglichst wenig Netzbezug über Nacht.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Vorteil 2: Prognose, Simulation, Datenschutz, Tarife -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-dark-800 rounded-xl p-8 border border-gray-700/50">
+                    <div class="w-12 h-12 bg-solar-500/10 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-solar-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold text-white mb-3">Eigene PV-Prognose</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Der Solarmanager berechnet eine eigene PV-Ertragsprognose anhand aktueller Wettermodelle — abgestimmt auf deine Anlage, Ausrichtung und Standort. Per Machine Learning wird die Prognose mit jeder Woche genauer. So weiß das System schon morgens, wieviel Strom über den Tag kommt, und verteilt die Energie optimal auf Auto, Akku und Haushalt.
+                    </p>
+                </div>
+                <div class="bg-dark-800 rounded-xl p-8 border border-gray-700/50">
+                    <div class="w-12 h-12 bg-blue-500/10 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714a2.25 2.25 0 00.659 1.591L19 14.5M14.25 3.104c.251.023.501.05.75.082M19 14.5l-2.47 2.47a3.375 3.375 0 01-4.06.644L12 17.5l-.47.114a3.375 3.375 0 01-4.06-.644L5 14.5m14 0V18a2.25 2.25 0 01-2.25 2.25H7.25A2.25 2.25 0 015 18v-3.5"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold text-white mb-3">Ladesimulation</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Wann ist das Auto voll? Die integrierte Simulation berechnet anhand der aktuellen Wetterprognose und des Ladestands, wie lange die Ladung noch dauert. So kannst du spontane Fahrten besser planen und siehst auf einen Blick, ob das Auto rechtzeitig geladen ist.
+                    </p>
+                </div>
+                <div class="bg-dark-800 rounded-xl p-8 border border-gray-700/50">
+                    <div class="w-12 h-12 bg-purple-500/10 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-purple-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold text-white mb-3">100% lokal — deine Daten bleiben bei dir</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Der Solarmanager läuft komplett auf deinem eigenen Raspberry Pi oder Server. Keine Cloud, kein Abo, keine Abhängigkeit von externen Diensten. Deine Energiedaten verlassen nie dein Netzwerk.
+                    </p>
+                </div>
+                <div class="bg-dark-800 rounded-xl p-8 border border-gray-700/50">
+                    <div class="w-12 h-12 bg-green-500/10 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-green-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 00-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 01-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 003 15h-.75M15 10.5a3 3 0 11-6 0 3 3 0 016 0zm3 0h.008v.008H18V10.5zm-12 0h.008v.008H6V10.5z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold text-white mb-3">Variable Stromtarife nutzen</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Bei dynamischen Stromtarifen (z.B. Tibber, aWATTar) wird automatisch dann aus dem Netz geladen, wenn der Strom am günstigsten ist — kombiniert mit der PV-Prognose für maximale Ersparnis.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Screenshots Section -->
+    <section id="screenshots" class="py-24 bg-dark-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">So sieht's aus</h2>
+                <p class="text-gray-400 max-w-2xl mx-auto">Uebersichtliches Interface fuer volle Kontrolle ueber dein Energiesystem</p>
+            </div>
+
+            <!-- Screenshot 1: Dashboard einfach -->
+            <div class="flex flex-col lg:flex-row items-center gap-12 mb-24">
+                <div class="lg:w-3/5">
+                    <img src="images/Dashboard_einfach.jpg" alt="Dashboard Uebersicht"
+                         class="rounded-xl shadow-2xl border border-gray-700/50 w-full">
+                </div>
+                <div class="lg:w-2/5">
+                    <h3 class="text-2xl font-bold text-white mb-4">Dashboard</h3>
+                    <p class="text-gray-400 leading-relaxed">
+                        Live-Uebersicht mit PV-Produktion, aktuellem Verbrauch, Akku-Status und Wettervorhersage.
+                        Alles auf einen Blick — optimiert fuer Desktop und Mobile.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Screenshot 2: Dashboard Detail -->
+            <div class="flex flex-col lg:flex-row-reverse items-center gap-12 mb-24">
+                <div class="lg:w-3/5">
+                    <img src="images/Dashboard.jpg" alt="Live-Monitoring"
+                         class="rounded-xl shadow-2xl border border-gray-700/50 w-full">
+                </div>
+                <div class="lg:w-2/5">
+                    <h3 class="text-2xl font-bold text-white mb-4">Live-Monitoring</h3>
+                    <p class="text-gray-400 leading-relaxed">
+                        Echtzeit-Leistungskurven mit Produktion, Verbrauch, Wallbox und Akku.
+                        Detaillierte Graphen zeigen den Energiefluss ueber den gesamten Tag.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Screenshot 3: Auswertungen -->
+            <div class="flex flex-col lg:flex-row items-center gap-12 mb-24">
+                <div class="lg:w-3/5">
+                    <img src="images/Auswertungen.jpg" alt="Auswertungen"
+                         class="rounded-xl shadow-2xl border border-gray-700/50 w-full">
+                </div>
+                <div class="lg:w-2/5">
+                    <h3 class="text-2xl font-bold text-white mb-4">Auswertungen</h3>
+                    <p class="text-gray-400 leading-relaxed">
+                        Monats- und Jahresvergleiche ueber mehrere Jahre.
+                        Erkenne Trends und optimiere deinen Eigenverbrauch langfristig.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Screenshot 4: Simulation -->
+            <div class="flex flex-col lg:flex-row-reverse items-center gap-12 mb-24">
+                <div class="lg:w-3/5">
+                    <img src="images/Simulation.jpg" alt="Simulation"
+                         class="rounded-xl shadow-2xl border border-gray-700/50 w-full">
+                </div>
+                <div class="lg:w-2/5">
+                    <h3 class="text-2xl font-bold text-white mb-4">Simulation</h3>
+                    <p class="text-gray-400 leading-relaxed">
+                        Ladesimulation: Wann ist das Auto voll bei aktuellem Wetter?
+                        Plane deine Fahrten mit Echtzeit-Prognosen.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Screenshot 5: Einstellungen -->
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                <div class="lg:w-3/5">
+                    <img src="images/Einstellungen.jpg" alt="Einstellungen"
+                         class="rounded-xl shadow-2xl border border-gray-700/50 w-full">
+                </div>
+                <div class="lg:w-2/5">
+                    <h3 class="text-2xl font-bold text-white mb-4">Einstellungen</h3>
+                    <p class="text-gray-400 leading-relaxed">
+                        PV-Anlagen, Akkus, Wallboxen, Autos und Prognosen konfigurieren.
+                        Flexibel anpassbar an jede Anlagenkonfiguration.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Highlights Section -->
+    <section id="highlights" class="py-24 bg-dark-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">Technische Highlights</h2>
+                <p class="text-gray-400 max-w-2xl mx-auto">Gebaut fuer Datenschutz, Flexibilitaet und Unabhaengigkeit</p>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+                <!-- Raspberry Pi -->
+                <div class="bg-dark-700 rounded-xl p-6 text-center border border-gray-700/50 hover:border-green-500/30 transition">
+                    <div class="w-12 h-12 mx-auto mb-3 bg-green-500/10 rounded-lg flex items-center justify-center">
+                        <svg class="w-6 h-6 text-green-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 3v1.5M4.5 8.25H3m18 0h-1.5M4.5 12H3m18 0h-1.5m-15 3.75H3m18 0h-1.5M8.25 19.5V21M12 3v1.5m0 15V21m3.75-18v1.5m0 15V21m-9-1.5h10.5a2.25 2.25 0 002.25-2.25V6.75a2.25 2.25 0 00-2.25-2.25H6.75A2.25 2.25 0 004.5 6.75v10.5a2.25 2.25 0 002.25 2.25z"/>
+                        </svg>
+                    </div>
+                    <p class="text-sm font-medium text-gray-300">Raspberry Pi</p>
+                </div>
+                <!-- Docker -->
+                <div class="bg-dark-700 rounded-xl p-6 text-center border border-gray-700/50 hover:border-blue-500/30 transition">
+                    <div class="w-12 h-12 mx-auto mb-3 bg-blue-500/10 rounded-lg flex items-center justify-center">
+                        <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M21 7.5l-2.25-1.313M21 7.5v2.25m0-2.25l-2.25 1.313M3 7.5l2.25-1.313M3 7.5l2.25 1.313M3 7.5v2.25m9 3l2.25-1.313M12 12.75l-2.25-1.313M12 12.75V15m0 6.75l2.25-1.313M12 21.75V19.5m0 2.25l-2.25-1.313m0-16.875L12 2.25l2.25 1.313M21 14.25v2.25l-2.25 1.313m-13.5 0L3 16.5v-2.25"/>
+                        </svg>
+                    </div>
+                    <p class="text-sm font-medium text-gray-300">Docker</p>
+                </div>
+                <!-- Lokal -->
+                <div class="bg-dark-700 rounded-xl p-6 text-center border border-gray-700/50 hover:border-purple-500/30 transition">
+                    <div class="w-12 h-12 mx-auto mb-3 bg-purple-500/10 rounded-lg flex items-center justify-center">
+                        <svg class="w-6 h-6 text-purple-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z"/>
+                        </svg>
+                    </div>
+                    <p class="text-sm font-medium text-gray-300">Kein Cloud-Zwang</p>
+                </div>
+                <!-- Stromtarife -->
+                <div class="bg-dark-700 rounded-xl p-6 text-center border border-gray-700/50 hover:border-solar-500/30 transition">
+                    <div class="w-12 h-12 mx-auto mb-3 bg-solar-500/10 rounded-lg flex items-center justify-center">
+                        <svg class="w-6 h-6 text-solar-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 00-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 01-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 003 15h-.75M15 10.5a3 3 0 11-6 0 3 3 0 016 0zm3 0h.008v.008H18V10.5zm-12 0h.008v.008H6V10.5z"/>
+                        </svg>
+                    </div>
+                    <p class="text-sm font-medium text-gray-300">Variable Tarife</p>
+                </div>
+                <!-- ML-Prognosen -->
+                <div class="bg-dark-700 rounded-xl p-6 text-center border border-gray-700/50 hover:border-green-500/30 transition">
+                    <div class="w-12 h-12 mx-auto mb-3 bg-green-500/10 rounded-lg flex items-center justify-center">
+                        <svg class="w-6 h-6 text-green-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3m0 0l.5 1.5m-.5-1.5h-9.5m0 0l-.5 1.5m.75-9l3-3 2.148 2.148A12.061 12.061 0 0116.5 7.605"/>
+                        </svg>
+                    </div>
+                    <p class="text-sm font-medium text-gray-300">ML-Prognosen</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Installation Section -->
+    <section id="installation" class="py-24 bg-dark-900">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">In Minuten installiert</h2>
+            <p class="text-gray-400 mb-10 max-w-2xl mx-auto">Mit Docker ist der Solarmanager in wenigen Schritten einsatzbereit.</p>
+            <div class="bg-dark-700 rounded-xl border border-gray-700/50 p-6 text-left mb-8">
+                <div class="flex items-center gap-2 mb-4">
+                    <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                    <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                    <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                    <span class="ml-2 text-xs text-gray-500">Terminal</span>
+                </div>
+                <pre class="text-sm text-gray-300 overflow-x-auto"><code>wget https://raw.githubusercontent.com/BBessler/Solarmanager/main/install/setup_docker.sh
+chmod +x setup_docker.sh
+./setup_docker.sh</code></pre>
+            </div>
+            <a href="installation.html"
+               class="inline-flex items-center gap-2 px-8 py-3 bg-solar-500 hover:bg-solar-400 text-dark-900 font-semibold rounded-lg transition transform hover:scale-105">
+                Zur Installationsanleitung
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/>
+                </svg>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 bg-dark-800 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="flex justify-center gap-6">
+                <a href="https://github.com/BBessler/Solarmanager" target="_blank" class="text-gray-400 hover:text-solar-400 transition inline-flex items-center gap-2 text-sm">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                    GitHub
+                </a>
+            </div>
+            <div class="flex justify-center gap-4 mt-6 text-xs text-gray-500">
+                <a href="impressum.html" class="hover:text-gray-300 transition">Impressum</a>
+            </div>
+            <p class="text-gray-600 text-xs mt-4">&copy; 2026 Solarmanager</p>
+        </div>
+    </footer>
+
+
+</body>
+</html>
