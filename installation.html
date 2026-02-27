@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Installation - Solarmanager</title>
-    <meta name="description" content="Installationsanleitung fuer den Solarmanager. Docker oder native Installation auf Raspberry Pi mit Schritt-fuer-Schritt-Anleitung und Screenshots.">
-    <meta name="author" content="Benjamin Bessler">
+    <meta name="description" content="Installationsanleitung für den Solarmanager. Docker oder native Installation auf Raspberry Pi mit Schritt-für-Schritt-Anleitung und Screenshots.">
+    <meta name="author" content="Benjamin Beßler">
     <link rel="canonical" href="https://solarmanager.online/installation.html">
     <!-- Open Graph -->
     <meta property="og:type" content="article">
     <meta property="og:title" content="Installation - Solarmanager">
-    <meta property="og:description" content="Schritt-fuer-Schritt-Anleitung zur Installation des Solarmanagers mit Docker oder nativ auf dem Raspberry Pi.">
+    <meta property="og:description" content="Schritt-für-Schritt-Anleitung zur Installation des Solarmanagers mit Docker oder nativ auf dem Raspberry Pi.">
     <meta property="og:url" content="https://solarmanager.online/installation.html">
     <meta property="og:image" content="https://solarmanager.online/images/Dashboard.jpg">
     <meta property="og:locale" content="de_DE">
@@ -214,7 +214,7 @@ chmod +x setup_docker.sh
                 </div>
                 <div class="ml-12 grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                        <img src="images/install/docker/7.jpg" alt="Zweite Ausfuehrung" class="rounded-xl border border-gray-700/50 w-full">
+                        <img src="images/install/docker/7.jpg" alt="Zweite Ausführung" class="rounded-xl border border-gray-700/50 w-full">
                         <p class="text-gray-500 text-xs mt-2">Zweite Ausführung des Scripts</p>
                     </div>
                     <div>
@@ -304,11 +304,11 @@ chmod +x update_docker.sh
                 <p class="text-gray-500 text-xs mt-3">Das Standard-Update installiert nur stabile Releases — ein Produktivsystem bekommt nie versehentlich eine Beta-Version.</p>
             </div>
 
-            <!-- Nuetzliche Befehle -->
+            <!-- Nützliche Befehle -->
             <div>
                 <h3 class="text-xl font-bold text-white mb-4">Nützliche Befehle</h3>
                 <div class="bg-dark-700 rounded-xl border border-gray-700/50 p-5">
-                    <pre class="text-sm text-gray-300 overflow-x-auto"><code><span class="text-gray-500"># Container-Status pruefen</span>
+                    <pre class="text-sm text-gray-300 overflow-x-auto"><code><span class="text-gray-500"># Container-Status prüfen</span>
 cd ~/solarmanager && docker compose ps
 
 <span class="text-gray-500"># Solarmanager-Logs anzeigen</span>
@@ -416,14 +416,14 @@ sudo ./update_solarmanager.sh</code></pre>
                 <p class="text-gray-400 text-sm">Das Update-Script lädt die neuesten Releases, sichert die Frontend-Konfiguration und startet das Backend neu. Für Beta-Versionen: <code class="text-solar-400">sudo ./update_solarmanager.sh --beta</code></p>
             </div>
 
-            <!-- Nuetzliche Befehle -->
+            <!-- Nützliche Befehle -->
             <div>
                 <h3 class="text-xl font-bold text-white mb-4">Nützliche Befehle</h3>
                 <div class="bg-dark-700 rounded-xl border border-gray-700/50 p-5">
                     <pre class="text-sm text-gray-300 overflow-x-auto"><code><span class="text-gray-500"># Backend neu starten</span>
 sudo systemctl restart solarmanager.service
 
-<span class="text-gray-500"># Backend-Status pruefen</span>
+<span class="text-gray-500"># Backend-Status prüfen</span>
 sudo systemctl status solarmanager.service
 
 <span class="text-gray-500"># Backend-Logs anzeigen</span>
