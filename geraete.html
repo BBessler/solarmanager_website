@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="de" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unterstützte Geräte - Solarmanager</title>
+    <meta name="description" content="Übersicht aller unterstützten Geräte im Solarmanager: PV-Wechselrichter, Wallboxen, Batteriespeicher, Elektrofahrzeuge, Smart Home und mehr.">
+    <meta name="keywords" content="Solarmanager, Huawei, SMA, go-eCharger, Easee, OCPP, Wallbox, Tesla, Marstek, Shelly, Tibber, Solcast">
+    <meta name="author" content="Benjamin Beßler">
+    <link rel="canonical" href="http://solarmanager.online/geraete.html">
+    <!-- Open Graph -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Unterstützte Geräte - Solarmanager">
+    <meta property="og:description" content="Alle kompatiblen Geräte und Einrichtungshinweise für den Solarmanager.">
+    <meta property="og:url" content="http://solarmanager.online/geraete.html">
+    <meta property="og:image" content="http://solarmanager.online/images/Dashboard.jpg">
+    <meta property="og:locale" content="de_DE">
+    <meta property="og:site_name" content="Solarmanager">
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-dark-900 text-gray-200">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-dark-900/80 backdrop-blur-md z-50 border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
+            <a href="index.html" class="text-xl font-bold text-solar-400">Solarmanager</a>
+            <div class="hidden md:flex gap-8 text-sm text-gray-400">
+                <a href="#wechselrichter" class="hover:text-solar-400 transition">Wechselrichter</a>
+                <a href="#wallboxen" class="hover:text-solar-400 transition">Wallboxen</a>
+                <a href="#speicher" class="hover:text-solar-400 transition">Speicher</a>
+                <a href="#fahrzeuge" class="hover:text-solar-400 transition">Fahrzeuge</a>
+                <a href="#smarthome" class="hover:text-solar-400 transition">Smart Home</a>
+                <a href="#weitere" class="hover:text-solar-400 transition">Weitere</a>
+            </div>
+            <a href="index.html" class="text-sm text-gray-400 hover:text-solar-400 transition">&larr; Startseite</a>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <section class="pt-28 pb-16 bg-dark-900">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl sm:text-5xl font-extrabold text-white mb-4">Unterstützte Geräte</h1>
+            <p class="text-lg text-gray-400 max-w-2xl mx-auto">
+                Alle kompatiblen Geräte auf einen Blick — mit Einrichtungshinweisen und Voraussetzungen.
+            </p>
+        </div>
+    </section>
+
+    <!-- Übersichtstabelle -->
+    <section class="pb-16 bg-dark-900">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-dark-700 rounded-xl border border-gray-700/50 overflow-hidden">
+                <div class="p-6 border-b border-gray-700/50">
+                    <h2 class="text-lg font-semibold text-white">Übersicht</h2>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-sm">
+                        <thead>
+                            <tr class="border-b border-gray-700/50">
+                                <th class="text-left p-4 text-gray-400 font-medium">Kategorie</th>
+                                <th class="text-left p-4 text-gray-400 font-medium">Geräte</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-gray-400">
+                            <tr class="border-b border-gray-700/30">
+                                <td class="p-4 font-medium text-solar-400">PV-Wechselrichter</td>
+                                <td class="p-4">Huawei (Modbus), Huawei (Fusion Portal), SMA, SunSpec, Shelly (BKW)</td>
+                            </tr>
+                            <tr class="border-b border-gray-700/30">
+                                <td class="p-4 font-medium text-green-400">Wallboxen</td>
+                                <td class="p-4">go-eCharger, Easee, OCPP 1.6, SunSpec, Keba, Fronius Wattpilot, Mennekes, Webasto, Hardy Barth, Heidelberg</td>
+                            </tr>
+                            <tr class="border-b border-gray-700/30">
+                                <td class="p-4 font-medium text-blue-400">Batteriespeicher</td>
+                                <td class="p-4">Marstek, Huawei</td>
+                            </tr>
+                            <tr class="border-b border-gray-700/30">
+                                <td class="p-4 font-medium text-purple-400">Elektrofahrzeuge</td>
+                                <td class="p-4">Tesla, BMW, Hyundai, Kia, VW, Audi, Skoda, Seat/Cupra, Mercedes, Opel, Peugeot, Citroën, DS, Renault</td>
+                            </tr>
+                            <tr class="border-b border-gray-700/30">
+                                <td class="p-4 font-medium text-orange-400">Smart Home</td>
+                                <td class="p-4">Shelly</td>
+                            </tr>
+                            <tr class="border-b border-gray-700/30">
+                                <td class="p-4 font-medium text-red-400">Heizung</td>
+                                <td class="p-4">Heizstab (via Shelly), Buderus KM200</td>
+                            </tr>
+                            <tr class="border-b border-gray-700/30">
+                                <td class="p-4 font-medium text-cyan-400">PV-Prognose</td>
+                                <td class="p-4">Solcast, Solarmanager (intern)</td>
+                            </tr>
+                            <tr>
+                                <td class="p-4 font-medium text-emerald-400">Stromanbieter</td>
+                                <td class="p-4">Tibber</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PV-Wechselrichter -->
+    <section id="wechselrichter" class="py-16 bg-dark-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center gap-3 mb-8">
+                <div class="w-10 h-10 bg-solar-500/10 rounded-lg flex items-center justify-center">
+                    <svg class="w-5 h-5 text-solar-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z"/>
+                    </svg>
+                </div>
+                <h2 class="text-2xl font-bold text-white">PV-Wechselrichter</h2>
+            </div>
+
+            <div class="space-y-6">
+                <!-- Huawei Modbus -->
+                <div class="bg-dark-700 rounded-xl border border-gray-700/50 p-6">
+                    <div class="flex items-start justify-between mb-3">
+                        <h3 class="text-lg font-semibold text-white">Huawei (Modbus)</h3>
+                        <span class="px-2 py-0.5 bg-solar-500/10 text-solar-400 text-xs font-semibold rounded">Lokal</span>
+                    </div>
+                    <p class="text-gray-400 text-sm mb-4">Direkte Kommunikation über Modbus TCP mit dem Huawei-Wechselrichter im lokalen Netzwerk.</p>
+                    <div class="bg-dark-800 rounded-lg p-4 border border-gray-700/30">
+                        <h4 class="text-sm font-semibold text-white mb-2">Einrichtung</h4>
+                        <ol class="text-sm text-gray-400 space-y-2 list-decimal list-inside">
+                            <li>Am Huawei-Wechselrichter die <strong class="text-white">Modbus-Schnittstelle aktivieren</strong> über die <a href="https://play.google.com/store/apps/details?id=com.huawei.solarconsole" target="_blank" class="text-solar-400 hover:underline">FusionSolar-App</a> (Gerät → Kommunikation → Modbus TCP)</li>
+                            <li>Wechselrichter muss per LAN-Kabel oder WLAN-Dongle im selben Netzwerk wie der Solarmanager sein</li>
+                            <li>IP-Adresse des Wechselrichters im Solarmanager eintragen (Standard-Port: 502)</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <!-- Huawei Fusion Portal -->
+                <div class="bg-dark-700 rounded-xl border border-gray-700/50 p-6">
+                    <div class="flex items-start justify-between mb-3">
+                        <h3 class="text-lg font-semibold text-white">Huawei (Fusion Portal)</h3>
+                        <span class="px-2 py-0.5 bg-blue-500/10 text-blue-400 text-xs font-semibold rounded">Cloud-API</span>
+                    </div>
+                    <p class="text-gray-400 text-sm mb-4">Anbindung über die Huawei FusionSolar Cloud-API. Geeignet, wenn kein lokaler Zugriff auf den Wechselrichter möglich ist.</p>
+                    <div class="bg-dark-800 rounded-lg p-4 border border-gray-700/30">
+                        <h4 class="text-sm font-semibold text-white mb-2">Einrichtung</h4>
+                        <ol class="text-sm text-gray-400 space-y-2 list-decimal list-inside">
+                            <li>Einen <strong class="text-white">FusionSolar-Account</strong> auf <a href="https://eu5.fusionsolar.huawei.com/unisso/login.action" target="_blank" class="text-solar-400 hover:underline">eu5.fusionsolar.huawei.com</a> anlegen</li>
+                            <li>Im FusionSolar-Portal unter „System" → „Unternehmensverwaltung" einen <strong class="text-white">Northbound-API-Benutzer</strong> erstellen</li>
+                            <li>Benutzername und Passwort im Solarmanager eintragen</li>
+                        </ol>
+                    </div>
+                    <div class="mt-3 flex items-start gap-2 text-xs text-gray-500">
+                        <svg class="w-4 h-4 text-solar-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z"/></svg>
+                        <span>Datenaktualisierung ca. alle 5 Minuten (Cloud-bedingte Verzögerung). Für Echtzeit-Daten wird Modbus empfohlen.</span>
+                    </div>
+                </div>
+
+                <!-- SMA -->
+                <div class="bg-dark-700 rounded-xl border border-gray-700/50 p-6">
+                    <div class="flex items-start justify-between mb-3">
+                        <h3 class="text-lg font-semibold text-white">SMA</h3>
+                        <span class="px-2 py-0.5 bg-solar-500/10 text-solar-400 text-xs font-semibold rounded">Lokal</span>
+                    </div>
+                    <p class="text-gray-400 text-sm mb-4">Anbindung über Modbus TCP. Unterstützt SMA-Wechselrichter mit aktivierter Modbus-Schnittstelle.</p>
+                    <div class="bg-dark-800 rounded-lg p-4 border border-gray-700/30">
+                        <h4 class="text-sm font-semibold text-white mb-2">Einrichtung</h4>
+                        <ol class="text-sm text-gray-400 space-y-2 list-decimal list-inside">
+                            <li>Im SMA <strong class="text-white">Sunny Explorer</strong> oder über das <a href="https://www.sma.de/produkte/monitoring-control/modbus-schnittstelle" target="_blank" class="text-solar-400 hover:underline">Webinterface</a> die Modbus-Schnittstelle aktivieren</li>
+                            <li>Wechselrichter muss per LAN im selben Netzwerk sein</li>
+                            <li>IP-Adresse des Wechselrichters im Solarmanager eintragen</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <!-- SunSpec -->
+                <div class="bg-dark-700 rounded-xl border border-gray-700/50 p-6">
+                    <div class="flex items-start justify-between mb-3">
+                        <h3 class="text-lg font-semibold text-white">SunSpec (Modbus TCP)</h3>
+                        <span class="px-2 py-0.5 bg-solar-500/10 text-solar-400 text-xs font-semibold rounded">Lokal</span>
+                    </div>
+                    <p class="text-gray-400 text-sm mb-4">Universelle Anbindung für alle Wechselrichter, die den SunSpec-Standard über Modbus TCP unterstützen (z.B. Fronius, SolarEdge, Kostal u.a.).</p>
+                    <div class="bg-dark-800 rounded-lg p-4 border border-gray-700/30">
+                        <h4 class="text-sm font-semibold text-white mb-2">Einrichtung</h4>
+                        <ol class="text-sm text-gray-400 space-y-2 list-decimal list-inside">
+                            <li>Modbus TCP am Wechselrichter <strong class="text-white">aktivieren</strong> (Herstellerdokumentation beachten)</li>
+                            <li>IP-Adresse und Port im Solarmanager eintragen</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <!-- Shelly BKW -->
+                <div class="bg-dark-700 rounded-xl border border-gray-700/50 p-6">
+                    <div class="flex items-start justify-between mb-3">
+                        <h3 class="text-lg font-semibold text-white">Shelly (Balkonkraftwerk)</h3>
+                        <span class="px-2 py-0.5 bg-solar-500/10 text-solar-400 text-xs font-semibold rounded">Lokal</span>
+                    </div>
+                    <p class="text-gray-400 text-sm mb-4">Erfassung der Einspeiseleistung eines Balkonkraftwerks über einen Shelly-Energiemesser (z.B. Shelly EM, Shelly Pro 3EM).</p>
+                    <div class="bg-dark-800 rounded-lg p-4 border border-gray-700/30">
+                        <h4 class="text-sm font-semibold text-white mb-2">Einrichtung</h4>
+                        <ol class="text-sm text-gray-400 space-y-2 list-decimal list-inside">
+                            <li>Shelly-Gerät im WLAN einrichten (<a href="https://www.shelly.com/de/app" target="_blank" class="text-solar-400 hover:underline">Shelly App</a>) und im selben Netzwerk wie den Solarmanager betreiben</li>
+                            <li>IP-Adresse des Shelly im Solarmanager eintragen</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Wallboxen -->
+    <section id="wallboxen" class="py-16 bg-dark-900">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center gap-3 mb-8">
+                <div class="w-10 h-10 bg-green-500/10 rounded-lg flex items-center justify-center">
+                    <svg class="w-5 h-5 text-green-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M21 10.5h.375c.621 0 1.125.504 1.125 1.125v2.25c0 .621-.504 1.125-1.125 1.125H21M3.75 18h15A2.25 2.25 0 0021 15.75v-6a2.25 2.25 0 00-2.25-2.25h-15A2.25 2.25 0 001.5 9.75v6A2.25 2.25 0 003.75 18z"/>
+                    </svg>
+                </div>
+                <h2 class="text-2xl font-bold text-white">Wallboxen</h2>
+            </div>
+
+            <div class="space-y-6">
+                <!-- go-eCharger -->
+                <div class="bg-dark-700 rounded-xl border border-gray-700/50 p-6">
+                    <div class="flex items-start justify-between mb-3">
+                        <h3 class="text-lg font-semibold text-white">go-eCharger</h3>
+                        <span class="px-2 py-0.5 bg-green-500/10 text-green-400 text-xs font-semibold rounded">Lokal</span>
+                    </div>
+                    <p class="text-gray-400 text-sm mb-4">Steuerung über die lokale HTTP-API. Unterstützt stufenlose Ladestromregelung.</p>
+                    <div class="bg-dark-800 rounded-lg p-4 border border-gray-700/30">
+                        <h4 class="text-sm font-semibold text-white mb-2">Einrichtung</h4>
+                        <ol class="text-sm text-gray-400 space-y-2 list-decimal list-inside">
+                            <li>In der <a href="https://github.com/goecharger/go-eCharger-API-v2" target="_blank" class="text-solar-400 hover:underline">go-e App</a> die <strong class="text-white">lokale HTTP-API v2 aktivieren</strong> (Einstellungen → API → HTTP API v2)</li>
+                            <li>go-eCharger muss im selben WLAN wie der Solarmanager sein</li>
+                            <li>IP-Adresse der Wallbox im Solarmanager eintragen</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <!-- Easee -->
+                <div class="bg-dark-700 rounded-xl border border-gray-700/50 p-6">
+                    <div class="flex items-start justify-between mb-3">
+                        <h3 class="text-lg font-semibold text-white">Easee</h3>
+                        <span class="px-2 py-0.5 bg-blue-500/10 text-blue-400 text-xs font-semibold rounded">Cloud-API</span>
+                    </div>
+                    <p class="text-gray-400 text-sm mb-4">Anbindung über die Easee Cloud-API mit Echtzeit-Steuerung per SignalR.</p>
+                    <div class="bg-dark-800 rounded-lg p-4 border border-gray-700/30">
+                        <h4 class="text-sm font-semibold text-white mb-2">Einrichtung</h4>
+                        <ol class="text-sm text-gray-400 space-y-2 list-decimal list-inside">
+                            <li><strong class="text-white">Easee-Account</strong> mit registrierter Wallbox erforderlich: <a href="https://easee.com/" target="_blank" class="text-solar-400 hover:underline">easee.com</a></li>
+                            <li>Easee-Zugangsdaten (E-Mail und Passwort) im Solarmanager eintragen</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <!-- OCPP -->
+                <div class="bg-dark-700 rounded-xl border border-gray-700/50 p-6">
+                    <div class="flex items-start justify-between mb-3">
+                        <h3 class="text-lg font-semibold text-white">OCPP 1.6</h3>
+                        <span class="px-2 py-0.5 bg-green-500/10 text-green-400 text-xs font-semibold rounded">Lokal</span>
+                    </div>
+                    <p class="text-gray-400 text-sm mb-4">Universelles Ladeprotokoll — kompatibel mit vielen Wallboxen verschiedener Hersteller (z.B. Vestel, ABL, Webasto, Mennekes u.a.).</p>
+                    <div class="bg-dark-800 rounded-lg p-4 border border-gray-700/30">
+                        <h4 class="text-sm font-semibold text-white mb-2">Einrichtung</h4>
+                        <ol class="text-sm text-gray-400 space-y-2 list-decimal list-inside">
+                            <li>In der Wallbox-Konfiguration die <strong class="text-white">OCPP-Backend-URL</strong> auf den Solarmanager setzen: <code class="text-solar-400">ws://&lt;solarmanager-ip&gt;:8180/ocpp</code></li>
+                            <li>ChargePoint-ID in der Wallbox konfigurieren und im Solarmanager eintragen</li>
+                        </ol>
+                    </div>
+                    <div class="mt-3 flex items-start gap-2 text-xs text-gray-500">
+                        <svg class="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                        <span>Empfohlene Option für maximale Herstellerunabhängigkeit.</span>
+                    </div>
+                </div>
+
+                <!-- SunSpec Wallbox -->
+                <div class="bg-dark-700 rounded-xl border border-gray-700/50 p-6">
+                    <div class="flex items-start justify-between mb-3">
+                        <h3 class="text-lg font-semibold text-white">SunSpec (Modbus)</h3>
+                        <span class="px-2 py-0.5 bg-green-500/10 text-green-400 text-xs font-semibold rounded">Lokal</span>
+                    </div>
+                    <p class="text-gray-400 text-sm mb-4">Steuerung über den SunSpec-Standard via Modbus TCP.</p>
+                    <div class="bg-dark-800 rounded-lg p-4 border border-gray-700/30">
+                        <h4 class="text-sm font-semibold text-white mb-2">Einrichtung</h4>
+                        <ol class="text-sm text-gray-400 space-y-2 list-decimal list-inside">
+                            <li>Modbus TCP an der Wallbox aktivieren</li>
+                            <li>IP-Adresse und Port im Solarmanager eintragen</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <!-- Keba -->
+                <div class="bg-dark-700 rounded-xl border border-gray-700/50 p-6">
+                    <div class="flex items-start justify-between mb-3">
+                        <h3 class="text-lg font-semibold text-white">Keba</h3>
+                        <span class="px-2 py-0.5 bg-green-500/10 text-green-400 text-xs font-semibold rounded">Lokal</span>
+                    </div>
+                    <p class="text-gray-400 text-sm mb-4">Steuerung über die UDP-Schnittstelle der Keba KeContact-Wallboxen.</p>
+                    <div class="bg-dark-800 rounded-lg p-4 border border-gray-700/30">
+                        <h4 class="text-sm font-semibold text-white mb-2">Einrichtung</h4>
+                        <ol class="text-sm text-gray-400 space-y-2 list-decimal list-inside">
+                            <li><strong class="text-white">UDP-Schnittstelle</strong> an der Wallbox aktivieren (DIP-Schalter oder Webinterface) — <a href="https://www.keba.com/de/emobility/service-support/downloads" target="_blank" class="text-solar-400 hover:underline">Keba Downloads</a></li>
+                            <li>Wallbox muss per LAN im selben Netzwerk sein</li>
+                            <li>IP-Adresse der Wallbox im Solarmanager eintragen</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <!-- Fronius Wattpilot -->
+                <div class="bg-dark-700 rounded-xl border border-gray-700/50 p-6">
+                    <div class="flex items-start justify-between mb-3">
+                        <h3 class="text-lg font-semibold text-white">Fronius Wattpilot</h3>
+                        <span class="px-2 py-0.5 bg-green-500/10 text-green-400 text-xs font-semibold rounded">Lokal</span>
+                    </div>
+                    <p class="text-gray-400 text-sm mb-4">Anbindung über die lokale WebSocket-API des Fronius Wattpilot.</p>
+                    <div class="bg-dark-800 rounded-lg p-4 border border-gray-700/30">
+                        <h4 class="text-sm font-semibold text-white mb-2">Einrichtung</h4>
+                        <ol class="text-sm text-gray-400 space-y-2 list-decimal list-inside">
+                            <li>Wattpilot im WLAN einrichten (<a href="https://www.fronius.com/de-de/germany/solarenergie/installateure-partner/produkte-loesungen/e-mobilitaet/fronius-wattpilot" target="_blank" class="text-solar-400 hover:underline">Fronius Wattpilot</a>) und im selben Netzwerk betreiben</li>
+                            <li>IP-Adresse und <strong class="text-white">Wattpilot-Passwort</strong> im Solarmanager eintragen</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <!-- Weitere Wallboxen -->
+                <div class="bg-dark-700 rounded-xl border border-gray-700/50 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-3">Mennekes, Webasto, Hardy Barth, Heidelberg</h3>
+                    <p class="text-gray-400 text-sm mb-4">Diese Wallboxen werden über ihre jeweilige Modbus-Schnittstelle oder über OCPP 1.6 angebunden.</p>
+                    <div class="bg-dark-800 rounded-lg p-4 border border-gray-700/30">
+                        <h4 class="text-sm font-semibold text-white mb-2">Einrichtung</h4>
+                        <ol class="text-sm text-gray-400 space-y-2 list-decimal list-inside">
+                            <li><strong class="text-white">Modbus TCP aktivieren</strong> oder OCPP-Backend-URL konfigurieren (je nach Modell)</li>
+                            <li>Wallbox im selben Netzwerk betreiben</li>
+                            <li>IP-Adresse bzw. ChargePoint-ID im Solarmanager eintragen</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Batteriespeicher -->
+    <section id="speicher" class="py-16 bg-dark-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center gap-3 mb-8">
+                <div class="w-10 h-10 bg-blue-500/10 rounded-lg flex items-center justify-center">
+                    <svg class="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M21 10.5h.375c.621 0 1.125.504 1.125 1.125v2.25c0 .621-.504 1.125-1.125 1.125H21M3.75 18h15A2.25 2.25 0 0021 15.75v-6a2.25 2.25 0 00-2.25-2.25h-15A2.25 2.25 0 001.5 9.75v6A2.25 2.25 0 003.75 18z"/>
+                    </svg>
+                </div>
+                <h2 class="text-2xl font-bold text-white">Batteriespeicher</h2>
+            </div>
+
+            <div class="space-y-6">
+                <!-- Marstek -->
+                <div class="bg-dark-700 rounded-xl border border-gray-700/50 p-6">
+                    <div class="flex items-start justify-between mb-3">
+                        <h3 class="text-lg font-semibold text-white">Marstek</h3>
+                        <span class="px-2 py-0.5 bg-green-500/10 text-green-400 text-xs font-semibold rounded">Lokal</span>
+                    </div>
+                    <p class="text-gray-400 text-sm mb-4">Steuerung über Modbus TCP. Der Solarmanager kann Lade- und Entladeleistung regeln.</p>
+                    <div class="bg-dark-800 rounded-lg p-4 border border-gray-700/30">
+                        <h4 class="text-sm font-semibold text-white mb-2">Einrichtung</h4>
+                        <ol class="text-sm text-gray-400 space-y-2 list-decimal list-inside">
+                            <li><a href="https://www.marstek.com/" target="_blank" class="text-solar-400 hover:underline">Marstek</a>-Speicher per LAN oder WLAN im selben Netzwerk betreiben</li>
+                            <li>IP-Adresse des Speichers im Solarmanager eintragen</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <!-- Huawei Speicher -->
+                <div class="bg-dark-700 rounded-xl border border-gray-700/50 p-6">
+                    <div class="flex items-start justify-between mb-3">
+                        <h3 class="text-lg font-semibold text-white">Huawei LUNA</h3>
+                        <span class="px-2 py-0.5 bg-green-500/10 text-green-400 text-xs font-semibold rounded">Lokal</span>
+                    </div>
+                    <p class="text-gray-400 text-sm mb-4">Wird zusammen mit dem Huawei-Wechselrichter über Modbus TCP ausgelesen. Der Speicher ist direkt am Wechselrichter angeschlossen.</p>
+                    <div class="bg-dark-800 rounded-lg p-4 border border-gray-700/30">
+                        <h4 class="text-sm font-semibold text-white mb-2">Einrichtung</h4>
+                        <ol class="text-sm text-gray-400 space-y-2 list-decimal list-inside">
+                            <li>Huawei-Wechselrichter mit <strong class="text-white">aktiviertem Modbus</strong> einrichten (siehe oben)</li>
+                            <li>Der Speicher wird automatisch über den Wechselrichter erkannt</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Elektrofahrzeuge -->
+    <section id="fahrzeuge" class="py-16 bg-dark-900">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center gap-3 mb-8">
+                <div class="w-10 h-10 bg-purple-500/10 rounded-lg flex items-center justify-center">
+                    <svg class="w-5 h-5 text-purple-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 00-3.213-9.193 2.056 2.056 0 00-1.58-.86H14.25M16.5 18.75h-2.25m0-11.177v-.958c0-.568-.422-1.048-.987-1.106a48.554 48.554 0 00-10.026 0 1.106 1.106 0 00-.987 1.106v7.635m12-6.677v6.677m0 4.5v-4.5m0 0h-12"/>
+                    </svg>
+                </div>
+                <h2 class="text-2xl font-bold text-white">Elektrofahrzeuge</h2>
+            </div>
+            <p class="text-gray-400 text-sm mb-8">Die Fahrzeuganbindung ermöglicht es, den aktuellen Ladestand (SoC) abzufragen und in die Ladeplanung einzubeziehen. Die Verbindung erfolgt über die jeweilige Hersteller-Cloud-API.</p>
+
+            <div class="space-y-6">
+                <!-- Tesla -->
+                <div class="bg-dark-700 rounded-xl border border-gray-700/50 p-6">
+                    <div class="flex items-start justify-between mb-3">
+                        <h3 class="text-lg font-semibold text-white">Tesla</h3>
+                        <span class="px-2 py-0.5 bg-blue-500/10 text-blue-400 text-xs font-semibold rounded">Cloud-API</span>
+                    </div>
+                    <p class="text-gray-400 text-sm mb-4">Anbindung über die Tesla Fleet API.</p>
+                    <div class="bg-dark-800 rounded-lg p-4 border border-gray-700/30">
+                        <h4 class="text-sm font-semibold text-white mb-2">Einrichtung</h4>
+                        <ol class="text-sm text-gray-400 space-y-2 list-decimal list-inside">
+                            <li><strong class="text-white">Tesla-Account</strong> mit registriertem Fahrzeug erforderlich: <a href="https://www.tesla.com/de_de/teslaaccount" target="_blank" class="text-solar-400 hover:underline">tesla.com</a></li>
+                            <li>Im Solarmanager den Tesla-Login durchführen (OAuth-Autorisierung)</li>
+                            <li>Fahrzeug auswählen — der Ladestand wird automatisch abgefragt</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <!-- BMW -->
+                <div class="bg-dark-700 rounded-xl border border-gray-700/50 p-6">
+                    <div class="flex items-start justify-between mb-3">
+                        <h3 class="text-lg font-semibold text-white">BMW</h3>
+                        <span class="px-2 py-0.5 bg-blue-500/10 text-blue-400 text-xs font-semibold rounded">Cloud-API</span>
+                    </div>
+                    <p class="text-gray-400 text-sm mb-4">Anbindung über die BMW Connected Drive API.</p>
+                    <div class="bg-dark-800 rounded-lg p-4 border border-gray-700/30">
+                        <h4 class="text-sm font-semibold text-white mb-2">Einrichtung</h4>
+                        <ol class="text-sm text-gray-400 space-y-2 list-decimal list-inside">
+                            <li><strong class="text-white">BMW Connected Drive Account</strong> mit verknüpftem Fahrzeug erforderlich: <a href="https://www.bmw-connecteddrive.com/" target="_blank" class="text-solar-400 hover:underline">bmw-connecteddrive.com</a></li>
+                            <li>Zugangsdaten im Solarmanager eintragen</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <!-- Hyundai / Kia -->
+                <div class="bg-dark-700 rounded-xl border border-gray-700/50 p-6">
+                    <div class="flex items-start justify-between mb-3">
+                        <h3 class="text-lg font-semibold text-white">Hyundai / Kia</h3>
+                        <span class="px-2 py-0.5 bg-blue-500/10 text-blue-400 text-xs font-semibold rounded">Cloud-API</span>
+                    </div>
+                    <p class="text-gray-400 text-sm mb-4">Anbindung über die Hyundai Bluelink bzw. Kia Connect API.</p>
+                    <div class="bg-dark-800 rounded-lg p-4 border border-gray-700/30">
+                        <h4 class="text-sm font-semibold text-white mb-2">Einrichtung</h4>
+                        <ol class="text-sm text-gray-400 space-y-2 list-decimal list-inside">
+                            <li><strong class="text-white">Bluelink-Account</strong> (<a href="https://www.bluelink.hyundai.de/" target="_blank" class="text-solar-400 hover:underline">Hyundai Bluelink</a>) bzw. <strong class="text-white">Kia Connect Account</strong> (<a href="https://www.kia.com/de/kia-connect.html" target="_blank" class="text-solar-400 hover:underline">Kia Connect</a>) mit verknüpftem Fahrzeug erforderlich</li>
+                            <li>Zugangsdaten im Solarmanager eintragen</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <!-- VW-Konzern -->
+                <div class="bg-dark-700 rounded-xl border border-gray-700/50 p-6">
+                    <div class="flex items-start justify-between mb-3">
+                        <h3 class="text-lg font-semibold text-white">VW, Audi, Skoda, Seat/Cupra</h3>
+                        <span class="px-2 py-0.5 bg-blue-500/10 text-blue-400 text-xs font-semibold rounded">Cloud-API</span>
+                    </div>
+                    <p class="text-gray-400 text-sm mb-4">Anbindung über die Volkswagen We Connect API (gilt für alle Marken des VW-Konzerns).</p>
+                    <div class="bg-dark-800 rounded-lg p-4 border border-gray-700/30">
+                        <h4 class="text-sm font-semibold text-white mb-2">Einrichtung</h4>
+                        <ol class="text-sm text-gray-400 space-y-2 list-decimal list-inside">
+                            <li><strong class="text-white">Volkswagen ID / We Connect Account</strong> mit verknüpftem Fahrzeug erforderlich: <a href="https://www.volkswagen.de/de/konnektivitaet-und-mobiliaetsdienste/myvolkswagen.html" target="_blank" class="text-solar-400 hover:underline">VW</a> · <a href="https://my.audi.com/" target="_blank" class="text-solar-400 hover:underline">Audi</a> · <a href="https://www.skoda-auto.de/konnektivitaet/skoda-connect" target="_blank" class="text-solar-400 hover:underline">Skoda</a> · <a href="https://my.cupraofficial.com/" target="_blank" class="text-solar-400 hover:underline">Seat/Cupra</a></li>
+                            <li>Zugangsdaten im Solarmanager eintragen</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <!-- Stellantis -->
+                <div class="bg-dark-700 rounded-xl border border-gray-700/50 p-6">
+                    <div class="flex items-start justify-between mb-3">
+                        <h3 class="text-lg font-semibold text-white">Opel, Peugeot, Citroën, DS</h3>
+                        <span class="px-2 py-0.5 bg-blue-500/10 text-blue-400 text-xs font-semibold rounded">Cloud-API</span>
+                    </div>
+                    <p class="text-gray-400 text-sm mb-4">Anbindung über die Stellantis API (ehemals PSA). Gilt für alle Stellantis-Marken.</p>
+                    <div class="bg-dark-800 rounded-lg p-4 border border-gray-700/30">
+                        <h4 class="text-sm font-semibold text-white mb-2">Einrichtung</h4>
+                        <ol class="text-sm text-gray-400 space-y-2 list-decimal list-inside">
+                            <li>Hersteller-Account mit verknüpftem Fahrzeug erforderlich: <a href="https://my.opel.com/" target="_blank" class="text-solar-400 hover:underline">MyOpel</a> · <a href="https://mypeugeot.peugeot.com/" target="_blank" class="text-solar-400 hover:underline">MyPeugeot</a> · <a href="https://mycitroen.citroen.com/" target="_blank" class="text-solar-400 hover:underline">MyCitroën</a> · <a href="https://myds.dsautomobiles.com/" target="_blank" class="text-solar-400 hover:underline">MyDS</a></li>
+                            <li>Zugangsdaten im Solarmanager eintragen</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <!-- Mercedes -->
+                <div class="bg-dark-700 rounded-xl border border-gray-700/50 p-6">
+                    <div class="flex items-start justify-between mb-3">
+                        <h3 class="text-lg font-semibold text-white">Mercedes-Benz</h3>
+                        <span class="px-2 py-0.5 bg-blue-500/10 text-blue-400 text-xs font-semibold rounded">Cloud-API</span>
+                    </div>
+                    <p class="text-gray-400 text-sm mb-4">Anbindung über die Mercedes me API.</p>
+                    <div class="bg-dark-800 rounded-lg p-4 border border-gray-700/30">
+                        <h4 class="text-sm font-semibold text-white mb-2">Einrichtung</h4>
+                        <ol class="text-sm text-gray-400 space-y-2 list-decimal list-inside">
+                            <li><strong class="text-white">Mercedes me Account</strong> mit verknüpftem Fahrzeug erforderlich: <a href="https://me.mercedes-benz.com/" target="_blank" class="text-solar-400 hover:underline">me.mercedes-benz.com</a></li>
+                            <li>Zugangsdaten im Solarmanager eintragen</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <!-- Renault -->
+                <div class="bg-dark-700 rounded-xl border border-gray-700/50 p-6">
+                    <div class="flex items-start justify-between mb-3">
+                        <h3 class="text-lg font-semibold text-white">Renault</h3>
+                        <span class="px-2 py-0.5 bg-blue-500/10 text-blue-400 text-xs font-semibold rounded">Cloud-API</span>
+                    </div>
+                    <p class="text-gray-400 text-sm mb-4">Anbindung über die Renault / MY Renault API.</p>
+                    <div class="bg-dark-800 rounded-lg p-4 border border-gray-700/30">
+                        <h4 class="text-sm font-semibold text-white mb-2">Einrichtung</h4>
+                        <ol class="text-sm text-gray-400 space-y-2 list-decimal list-inside">
+                            <li><strong class="text-white">MY Renault Account</strong> mit verknüpftem Fahrzeug erforderlich: <a href="https://myrenault.renault.de/" target="_blank" class="text-solar-400 hover:underline">myrenault.renault.de</a></li>
+                            <li>Zugangsdaten im Solarmanager eintragen</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Smart Home -->
+    <section id="smarthome" class="py-16 bg-dark-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center gap-3 mb-8">
+                <div class="w-10 h-10 bg-orange-500/10 rounded-lg flex items-center justify-center">
+                    <svg class="w-5 h-5 text-orange-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"/>
+                    </svg>
+                </div>
+                <h2 class="text-2xl font-bold text-white">Smart Home</h2>
+            </div>
+
+            <div class="space-y-6">
+                <!-- Shelly -->
+                <div class="bg-dark-700 rounded-xl border border-gray-700/50 p-6">
+                    <div class="flex items-start justify-between mb-3">
+                        <h3 class="text-lg font-semibold text-white">Shelly</h3>
+                        <span class="px-2 py-0.5 bg-green-500/10 text-green-400 text-xs font-semibold rounded">Lokal</span>
+                    </div>
+                    <p class="text-gray-400 text-sm mb-4">Shelly-Geräte können als schaltbare Verbraucher eingebunden werden. Der Solarmanager schaltet sie abhängig vom PV-Überschuss ein oder aus.</p>
+                    <div class="bg-dark-800 rounded-lg p-4 border border-gray-700/30">
+                        <h4 class="text-sm font-semibold text-white mb-2">Einrichtung</h4>
+                        <ol class="text-sm text-gray-400 space-y-2 list-decimal list-inside">
+                            <li>Shelly-Gerät per <strong class="text-white">WLAN im selben Netzwerk</strong> wie den Solarmanager einrichten (<a href="https://www.shelly.com/de/app" target="_blank" class="text-solar-400 hover:underline">Shelly App</a>)</li>
+                            <li>IP-Adresse des Shelly im Solarmanager eintragen</li>
+                            <li>Leistung des angeschlossenen Verbrauchers konfigurieren</li>
+                        </ol>
+                    </div>
+                    <div class="mt-3 flex items-start gap-2 text-xs text-gray-500">
+                        <svg class="w-4 h-4 text-orange-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z"/></svg>
+                        <span>Geeignet für: Poolpumpen, Klimaanlagen, Heizlüfter, Waschmaschinen-Timer und weitere schaltbare Verbraucher.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Weitere Geräte -->
+    <section id="weitere" class="py-16 bg-dark-900">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center gap-3 mb-8">
+                <div class="w-10 h-10 bg-cyan-500/10 rounded-lg flex items-center justify-center">
+                    <svg class="w-5 h-5 text-cyan-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 16.875h3.375m0 0h3.375m-3.375 0V13.5m0 3.375v3.375M6 10.5h2.25a2.25 2.25 0 002.25-2.25V6a2.25 2.25 0 00-2.25-2.25H6A2.25 2.25 0 003.75 6v2.25A2.25 2.25 0 006 10.5zm0 9.75h2.25A2.25 2.25 0 0010.5 18v-2.25a2.25 2.25 0 00-2.25-2.25H6a2.25 2.25 0 00-2.25 2.25V18A2.25 2.25 0 006 20.25zm9.75-9.75H18a2.25 2.25 0 002.25-2.25V6A2.25 2.25 0 0018 3.75h-2.25A2.25 2.25 0 0013.5 6v2.25a2.25 2.25 0 002.25 2.25z"/>
+                    </svg>
+                </div>
+                <h2 class="text-2xl font-bold text-white">Heizung, Prognose & Stromanbieter</h2>
+            </div>
+
+            <div class="space-y-6">
+                <!-- Heizstab -->
+                <div class="bg-dark-700 rounded-xl border border-gray-700/50 p-6">
+                    <div class="flex items-start justify-between mb-3">
+                        <h3 class="text-lg font-semibold text-white">Heizstab (via Shelly)</h3>
+                        <span class="px-2 py-0.5 bg-green-500/10 text-green-400 text-xs font-semibold rounded">Lokal</span>
+                    </div>
+                    <p class="text-gray-400 text-sm mb-4">Warmwasserbereitung über einen Heizstab, der per Shelly geschaltet wird. Der Solarmanager aktiviert den Heizstab bei PV-Überschuss.</p>
+                    <div class="bg-dark-800 rounded-lg p-4 border border-gray-700/30">
+                        <h4 class="text-sm font-semibold text-white mb-2">Einrichtung</h4>
+                        <ol class="text-sm text-gray-400 space-y-2 list-decimal list-inside">
+                            <li>Heizstab über einen <strong class="text-white">Shelly-Schaltaktor</strong> (z.B. Shelly 1PM) anschließen</li>
+                            <li>Shelly im WLAN einrichten und IP-Adresse im Solarmanager eintragen</li>
+                            <li>Leistung des Heizstabs konfigurieren</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <!-- Buderus -->
+                <div class="bg-dark-700 rounded-xl border border-gray-700/50 p-6">
+                    <div class="flex items-start justify-between mb-3">
+                        <h3 class="text-lg font-semibold text-white">Buderus KM200</h3>
+                        <span class="px-2 py-0.5 bg-green-500/10 text-green-400 text-xs font-semibold rounded">Lokal</span>
+                    </div>
+                    <p class="text-gray-400 text-sm mb-4">Anbindung der Buderus-Heizung über das KM200-Gateway für Warmwasser-Steuerung.</p>
+                    <div class="bg-dark-800 rounded-lg p-4 border border-gray-700/30">
+                        <h4 class="text-sm font-semibold text-white mb-2">Einrichtung</h4>
+                        <ol class="text-sm text-gray-400 space-y-2 list-decimal list-inside">
+                            <li><strong class="text-white">KM200-Gateway</strong> muss im selben Netzwerk sein — <a href="https://www.buderus.de/de/produkte/regelungen/konnektivitaet" target="_blank" class="text-solar-400 hover:underline">Buderus Konnektivität</a></li>
+                            <li>IP-Adresse und <strong class="text-white">Gateway-Passwort</strong> im Solarmanager eintragen</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <!-- Solcast -->
+                <div class="bg-dark-700 rounded-xl border border-gray-700/50 p-6">
+                    <div class="flex items-start justify-between mb-3">
+                        <h3 class="text-lg font-semibold text-white">Solcast (PV-Prognose)</h3>
+                        <span class="px-2 py-0.5 bg-blue-500/10 text-blue-400 text-xs font-semibold rounded">Cloud-API</span>
+                    </div>
+                    <p class="text-gray-400 text-sm mb-4">Professionelle PV-Prognose auf Basis von Satellitendaten und Wettermodellen. Für Privatanwender kostenlos.</p>
+                    <div class="bg-dark-800 rounded-lg p-4 border border-gray-700/30">
+                        <h4 class="text-sm font-semibold text-white mb-2">Einrichtung</h4>
+                        <ol class="text-sm text-gray-400 space-y-2 list-decimal list-inside">
+                            <li>Kostenlosen Account auf <a href="https://toolkit.solcast.com.au/register" target="_blank" class="text-solar-400 hover:underline">solcast.com</a> anlegen</li>
+                            <li>PV-Anlage mit Ausrichtung, Neigung und Leistung konfigurieren</li>
+                            <li><strong class="text-white">API-Key</strong> im Solarmanager eintragen</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <!-- Solarmanager intern -->
+                <div class="bg-dark-700 rounded-xl border border-gray-700/50 p-6">
+                    <div class="flex items-start justify-between mb-3">
+                        <h3 class="text-lg font-semibold text-white">Solarmanager Prognose (intern)</h3>
+                        <span class="px-2 py-0.5 bg-green-500/10 text-green-400 text-xs font-semibold rounded">Lokal</span>
+                    </div>
+                    <p class="text-gray-400 text-sm mb-4">Eigene ML-basierte PV-Prognose des Solarmanagers. Lernt aus den tatsächlichen Produktionsdaten und verbessert sich über die Zeit.</p>
+                    <div class="bg-dark-800 rounded-lg p-4 border border-gray-700/30">
+                        <h4 class="text-sm font-semibold text-white mb-2">Einrichtung</h4>
+                        <p class="text-sm text-gray-400">Keine zusätzliche Konfiguration erforderlich — wird automatisch aktiviert, sobald genügend historische Daten vorhanden sind.</p>
+                    </div>
+                </div>
+
+                <!-- Tibber -->
+                <div class="bg-dark-700 rounded-xl border border-gray-700/50 p-6">
+                    <div class="flex items-start justify-between mb-3">
+                        <h3 class="text-lg font-semibold text-white">Tibber (Stromanbieter)</h3>
+                        <span class="px-2 py-0.5 bg-blue-500/10 text-blue-400 text-xs font-semibold rounded">Cloud-API</span>
+                    </div>
+                    <p class="text-gray-400 text-sm mb-4">Integration des dynamischen Stromtarifs von Tibber. Der Solarmanager berücksichtigt die stündlichen Preise bei der Ladeplanung.</p>
+                    <div class="bg-dark-800 rounded-lg p-4 border border-gray-700/30">
+                        <h4 class="text-sm font-semibold text-white mb-2">Einrichtung</h4>
+                        <ol class="text-sm text-gray-400 space-y-2 list-decimal list-inside">
+                            <li><strong class="text-white">Tibber-Account</strong> mit aktivem Stromvertrag erforderlich: <a href="https://tibber.com/" target="_blank" class="text-solar-400 hover:underline">tibber.com</a></li>
+                            <li><strong class="text-white">API-Token</strong> auf <a href="https://developer.tibber.com/" target="_blank" class="text-solar-400 hover:underline">developer.tibber.com</a> generieren</li>
+                            <li>Token im Solarmanager eintragen</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hinweis -->
+    <section class="py-12 bg-dark-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-dark-700 rounded-xl border border-solar-500/30 p-6">
+                <h3 class="text-white font-semibold mb-3 flex items-center gap-2">
+                    <svg class="w-5 h-5 text-solar-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z"/>
+                    </svg>
+                    Generelle Hinweise
+                </h3>
+                <div class="space-y-3 text-sm text-gray-400">
+                    <p><strong class="text-gray-300">Netzwerk:</strong> Alle lokalen Geräte (Wechselrichter, Wallboxen, Speicher, Shelly) müssen sich im selben Netzwerk wie der Solarmanager befinden.</p>
+                    <p><strong class="text-gray-300">Cloud-APIs:</strong> Für Cloud-basierte Anbindungen (Fahrzeuge, Easee, Tibber, Solcast, Huawei Fusion Portal) ist eine Internetverbindung des Solarmanagers erforderlich.</p>
+                    <p><strong class="text-gray-300">Konfiguration:</strong> Alle Geräte werden im Solarmanager unter <strong class="text-white">Einstellungen</strong> konfiguriert. Die Einrichtung erfolgt über den Setup-Wizard oder manuell.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 bg-dark-800 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="flex justify-center gap-6">
+                <a href="https://github.com/BBessler/Solarmanager" target="_blank" class="text-gray-400 hover:text-solar-400 transition inline-flex items-center gap-2 text-sm">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                    GitHub
+                </a>
+            </div>
+            <div class="flex justify-center gap-4 mt-4 text-xs text-gray-500">
+                <a href="impressum.html" class="hover:text-gray-300 transition">Impressum</a>
+            </div>
+            <p class="text-gray-600 text-xs mt-4">&copy; 2026 Solarmanager</p>
+        </div>
+    </footer>
+
+</body>
+</html>

@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://solarmanager.online/sitemap.xml
+Sitemap: http://solarmanager.online/sitemap.xml
